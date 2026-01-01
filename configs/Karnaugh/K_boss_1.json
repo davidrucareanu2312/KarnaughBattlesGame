@@ -1,7 +1,7 @@
 {
     "campaign_name": "Primele porti logice",
     "boss_behavior": "standard", 
-    "boss_sprite" : "assets/sprites/boss_sprites/sprite_boss1.png",
+    "boss_sprite" : "assets/sprites/boss_sprites/tutorial_boss.jpeg",
     "minimal_round_score" : 0.5,
     "minimal_score" : 0.5,
     "boss_lines" : {
