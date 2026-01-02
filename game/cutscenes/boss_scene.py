@@ -22,9 +22,7 @@ class BossScene:
         self.battle_config_path = None
 
     def start(self, image_filename, dialogue_text, config_path, music_filename=None):
-        """
-        Inițializează scena cu boss-ul specificat.
-        """
+
         self.phase = 0
         self.full_text = dialogue_text 
         self.display_text = ""

@@ -26,7 +26,6 @@ class DialogBox:
         self.pending_boss_data = None 
 
     def show(self, text):
-        """ Inițializează și pornește afișarea textului """
         if self.active and self.full_text == text and self.done_typing:
             self.hide()
             return
@@ -45,12 +44,10 @@ class DialogBox:
         self.done_typing = True
 
     def skip_animation(self):
-        """ Afișează tot textul instantaneu """
         self.displayed_text = self.full_text
         self.done_typing = True
 
     def update(self):
-        """ Logica internă de adăugare a literelor """
         if self.active and not self.done_typing:
             now = pygame.time.get_ticks()
             if now - self.last_update > self.type_speed:

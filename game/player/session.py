@@ -12,7 +12,6 @@ class Session:
         self.beaten_boss5 = False
         
     def take_damage(self, amount):
-        """ Scade viața și verifică dacă jucătorul a murit """
         self.current_health -= amount
         if self.current_health <= 0:
             self.current_health = 0
@@ -20,7 +19,6 @@ class Session:
             print("SESSION: Player has died.")
 
     def heal(self, amount):
-        """ Adaugă viața fără a depăși maximul """
         if not self.is_alive:
             return 
             
@@ -29,19 +27,13 @@ class Session:
             self.current_health = self.max_health
 
     def reset(self):
-        """ 
-        Se apelează când mori (Game Over).
-        Resetează viața, dar PĂSTREAZĂ progresul boșilor.
-        Astfel, nu trebuie să îi bați iar pe cei deja învinși.
-        """
+
         self.current_health = self.max_health
         self.is_alive = True
         print("SESSION: Player stats reset (Progress kept).")
 
     def full_reset(self):
-        """ 
-        (Opțional) Dacă vrei să ștergi tot progresul (New Game)
-        """
+
         self.current_health = self.max_health
         self.is_alive = True
         self.battles_won = 0

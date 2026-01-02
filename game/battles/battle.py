@@ -18,7 +18,6 @@ class Battle:
         self.width, self.height = screen.get_size()
         
     def handle_event(self, event):
-        """ Gestioneaza input-ul in timpul 'luptei' (ecranului de loading) """
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_e:
                 self.is_victory = True
@@ -26,11 +25,9 @@ class Battle:
                 print("DEBUG: Battle skipped via E (Auto-Win)")
 
     def update(self, dt):
-        """ Nu avem logica de timp sau animatii complexe """
         pass
 
     def draw(self):
-        """ Deseneaza ecranul BATTLE STARTED """
         self.screen.fill((0, 0, 0))
 
         text_surf = self.font_large.render("BATTLE STARTED", True, (255, 0, 0))
