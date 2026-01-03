@@ -26,38 +26,38 @@ class MapLoader:
                 'text': "Ripoff PRECIS. (Pare periculos...)",
                 'type': 'boss_trigger',
                 'boss_id': 1,
-                'boss_img': 'boss_sprites/K_boss_1.json',
-                'boss_line': "Sa te vad la examen.",
+                'boss_img': 'boss_sprites/trei.png',
+                'boss_line': "I may be former president, but I am CURRENT logical projec...tor??",
                 'battle_config': 'configs/Karnaugh/K_boss_1.json'
             },
             
             {
                 'rect': pygame.Rect(788, 184, 50, 80),
-                'text': "Un student de anul 4 care nu a dormit.",
+                'text': "EC Ripoff. Te simti amenintat.",
                 'type': 'boss_trigger',
                 'boss_id': 2,
-                'boss_img': 'boss_sprites/K_boss_2.json', 
-                'boss_line': "Ai tema la OS rezolvata??",
+                'boss_img': 'boss.png', 
+                'boss_line': "Cogito ergo sum... TE PROIECTEZ LOGIC.",
                 'battle_config': 'configs/Karnaugh/K_boss_2.json'
             },
 
             {
                 'rect': pygame.Rect(1480, 412, 50, 80),
-                'text': "Gardianul Restantelor.",
+                'text': "ED Ripoff. Te simti slabit...",
                 'type': 'boss_trigger',
                 'boss_id': 3,
-                'boss_img': 'boss_sprites/K_boss_3.json',
-                'boss_line': "Carnetul la control!",
+                'boss_img': 'boss.png',
+                'boss_line': "OOO MY GODDDDD!!!",
                 'battle_config': 'configs/Karnaugh/K_boss_3.json'
             },
 
             {
                 'rect': pygame.Rect(1208, 916, 50, 80),
-                'text': "Maestrul Portilor Logice.",
+                'text': "AN si OZN-ul. Te simti amenintat logic..",
                 'type': 'boss_trigger',
                 'boss_id': 4,
-                'boss_img': 'boss_sprites/K_boss_4.json',
-                'boss_line': "01001110!",
+                'boss_img': 'boss_sprites/khiru.png',
+                'boss_line': "Eu sunt regele. Vezi sa nu pici.",
                 'battle_config': 'configs/Karnaugh/K_boss_4.json'
             },
             {

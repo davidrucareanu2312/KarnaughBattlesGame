@@ -1,0 +1,12 @@
+{
+    "written": true,
+    "position": {
+        "x": 700,
+        "y": 200
+    },
+    "beaten_boss1": false,
+    "beaten_boss2": false,
+    "beaten_boss3": false,
+    "beaten_boss4": false,
+    "beaten_boss5": false
+}

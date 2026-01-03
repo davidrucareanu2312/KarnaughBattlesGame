@@ -3,18 +3,22 @@ import json
 import os
 from .solver import solve_karnaugh
 from .k_utils import is_valid_group, term_from_group
-from .bosses import StandardBoss, HazardStateBoss
+from .bosses import StandardBoss, HazardStateBoss, DisfunctionalBoss, TutorialBoss, FinalBoss
 from .renderer import BattleRenderer
+from game.ui.dialog import DialogBox
 
 class Battle:
     def __init__(self, screen, config_path, session):
         self.screen = screen
         self.finished = False
         self.session = session
+
+        self.is_tutorial = False
         
         w, h = screen.get_size()
 
         self.renderer = BattleRenderer(screen) 
+        self.dialog_box = DialogBox(w, h)
         
         self.max_health = session.max_health
         self.current_health = session.max_health
@@ -41,11 +45,23 @@ class Battle:
             except Exception as e:
                 print(f"Eroare incarcare sprite: {e}")
         
+        self.boss_lines = self.config.get("boss_lines", {})
+        self.dialogue_queue = []
+        self.pending_next_action = None 
         self.defeat_text = "Ai fost invins."
+        
+        self.battle_triggers = {}
+        for item in self.boss_lines.get("battle_lines", []):
+            self.battle_triggers[item["after"]] = item["message"]
 
         boss_type = self.config.get("boss_behavior", "standard")
-        self.boss_logic = StandardBoss(self)
         if boss_type == "hazard": self.boss_logic = HazardStateBoss(self)
+        elif boss_type == "disfunctional": self.boss_logic = DisfunctionalBoss(self)
+        elif boss_type == "tutorial": 
+            self.boss_logic = TutorialBoss(self)
+            self.is_tutorial = True
+        elif boss_type == "final": self.boss_logic = FinalBoss(self)
+        else: self.boss_logic = StandardBoss(self)
 
         self.rows = 0
         self.cols = 0
@@ -75,7 +91,11 @@ class Battle:
         self.total_score = 0.0      
         self.max_possible_score = 0.0 
 
-        self.load_phase(0)
+        start_msgs = self.boss_lines.get("start_lines", [])
+        if start_msgs:
+            self.queue_dialogue(start_msgs, action_after="START_FIRST_PHASE")
+        else:
+            self.load_phase(0)
 
     def calculate_metrics(self, sol_str):
         clean = sol_str.replace(" ", "")
@@ -88,6 +108,41 @@ class Battle:
             length = sum(1 for char in t if char.isalpha())
             total_len += max(1, length)
         return num_terms, total_len
+
+    def queue_dialogue(self, messages, action_after=None):
+        if isinstance(messages, str):
+            messages = [messages]
+        
+        was_empty = (len(self.dialogue_queue) == 0)
+        self.dialogue_queue.extend(messages)
+        self.pending_next_action = action_after
+        
+        if was_empty and not self.dialog_box.active:
+            self.start_next_line()
+
+    def start_next_line(self):
+        if self.dialogue_queue:
+            text = self.dialogue_queue[0]
+            self.dialog_box.show(text)
+
+    def advance_dialogue(self):
+        if self.dialogue_queue:
+            self.dialogue_queue.pop(0)
+        
+        if self.dialogue_queue:
+            self.start_next_line()
+        else:
+            self.dialog_box.hide()
+            
+            if self.pending_next_action == "START_FIRST_PHASE":
+                self.load_phase(0)
+            elif self.pending_next_action == "NEXT_PHASE":
+                self.current_phase_idx += 1
+                self.load_phase(self.current_phase_idx)
+            elif self.pending_next_action == "END_GAME":
+                self.check_game_end_condition()
+            
+            self.pending_next_action = None
 
     def check_game_end_condition(self):
         self.show_end_screen = True
@@ -139,10 +194,25 @@ class Battle:
             self.cell_width, self.cell_height = 100, 100
             self.row_labels, self.col_labels = ["00", "01", "11", "10"], ["00", "01", "11", "10"]
             self.corner_label = "AB \\ CD"
+        elif self.num_vars == 5:
+            self.rows, self.cols = 4, 8
+            self.cell_width, self.cell_height = 80, 80
+            self.row_labels = ["00", "01", "11", "10"]
+            self.col_labels = ["000", "001", "011", "010", "110", "111", "101", "100"] 
+            self.corner_label = "AB \\ CDE"
+        elif self.num_vars == 6:
+            self.rows, self.cols = 8, 8
+            self.cell_width, self.cell_height = 60, 60
+            self.row_labels = ["000", "001", "011", "010", "110", "111", "101", "100"] 
+            self.col_labels = ["000", "001", "011", "010", "110", "111", "101", "100"] 
+            self.corner_label = "ABC \\ DEF"
         
         self.margin = 5
 
     def update(self, dt):
+        if self.dialog_box.active:
+            return
+
         if self.show_end_screen:
             return
 
@@ -163,13 +233,22 @@ class Battle:
 
     def handle_event(self, event):
         if event.type == pygame.KEYDOWN:
+            
             if self.show_end_screen:
                 if event.key == pygame.K_RETURN or event.key == pygame.K_ESCAPE or event.key == pygame.K_SPACE:
                     self.finished = True
-                return 
+                return
 
             if event.key == pygame.K_ESCAPE:
                 self.finished = True
+                return
+
+            if self.dialog_box.active:
+                if event.key in [pygame.K_SPACE, pygame.K_RETURN, pygame.K_n]:
+                    if not self.dialog_box.done_typing:
+                        self.dialog_box.skip_animation()
+                    else:
+                        self.advance_dialogue()
                 return
 
             if self.show_summary:
@@ -182,10 +261,18 @@ class Battle:
 
                     phases_completed = self.current_phase_idx + 1
                     if phases_completed < self.total_phases:
-                        self.current_phase_idx += 1
-                        self.load_phase(self.current_phase_idx)
+                        if phases_completed in self.battle_triggers:
+                            msg = self.battle_triggers[phases_completed]
+                            self.queue_dialogue(msg, action_after="NEXT_PHASE")
+                        else:
+                            self.current_phase_idx += 1
+                            self.load_phase(self.current_phase_idx)
                     else:
-                        self.check_game_end_condition()
+                        end_msgs = self.boss_lines.get("end_lines", [])
+                        if end_msgs:
+                            self.queue_dialogue(end_msgs, action_after="END_GAME")
+                        else:
+                            self.check_game_end_condition()
                 
                 elif event.key == pygame.K_r:
                     self.total_score -= self.round_score 
@@ -233,7 +320,7 @@ class Battle:
                     if self.check_complete():
                         self.show_options = True
 
-        elif event.type == pygame.MOUSEBUTTONDOWN and not self.show_summary and not self.show_end_screen:
+        elif event.type == pygame.MOUSEBUTTONDOWN and not self.dialog_box.active and not self.show_summary and not self.show_end_screen:
             mx, my = event.pos
             if self.rows > 0:
                 screen_w, screen_h = self.screen.get_size()
