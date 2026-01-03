@@ -1,0 +1,114 @@
+{
+    "campaign_name": "Lupta cu K....hiru, cel ce a acaparat diagramele karnaugh",
+    "boss_behavior": "final", 
+    "boss_sprite" : "assets/sprites/boss_sprites/sprite_boss4.png",
+    "minimal_round_score" : 0.75,
+    "minimal_score" : 0.75,
+    "boss_lines" : {
+        "start_lines": ["Lupta aceasta va fi o calatorie, prin tot ce inseamna...","...CALCULATORUL", "Incepem cu fenomenul de electricitate..."],
+        "battle_lines": [
+            {
+                "message" : "Oricum nu ai nevoie de fizica la calculatoare",
+                "after" : 1
+            },
+            {
+                "message" : "Asta e cea mai misto parte de aici, tot ce vine dupa, este plictisitor",
+                "after" : 3
+            },
+            {
+                "message" : "Inseamna ca ai inteles arhitectura unui calculator, poate te-am subestimat",
+                "after" : 10
+            },
+            {
+                "message" : "REVENIM LA CEA MAI TARE PARTE",
+                "after" : 10
+            },
+            {
+                "message" : "CE TI-A PLACUT CEL MAI MULT...DIAGRAMELE KARNAUGH",
+                "after" : 10
+            }
+            
+        ],
+        "end_lines": []
+    },
+    "total_time": 90,
+    "levels": [
+        {
+            "level_name": "Phase 1 - Fenomene cuantice si camp electric",
+            "num_vars": 2,
+            "cells": [1, 0, 1, 1],
+            "hints": ["Începe ușor..."],
+            "weight": 0.25
+        },
+        {
+            "level_name": "Phase 2 - Componente electronice de baza",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [7],
+            "weight": 0.25
+        },
+        {
+            "level_name": "Phase 3 - Porti logice...logica digitala",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [7],
+            "weight": 0.25
+        },
+        {
+            "level_name": "Phase 4 - Automate finite pe stari si masini de calcul",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [7],
+            "weight": 0.25
+        },
+        {
+            "level_name": "Phase 5 - Arhitecturi, registrii si instructiuni",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [7],
+            "weight": 0.25
+        },
+        {
+            "level_name": "Phase 6 - Sisteme de operare",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [7],
+            "weight": 0.25
+        },
+        {
+            "level_name": "Phase 7 - Limbaje de programare si compilatoare",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [7],
+            "weight": 0.25
+        },
+        {
+            "level_name": "Phase 8 - Programe si algoritmi",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [7],
+            "weight": 0.25
+        },
+        {
+            "level_name": "Phase 9 - Algoritmi si modele de calcul",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [7],
+            "weight": 0.25
+        },
+        {
+            "level_name": "Phase 10 - Calculabilitate, multimi si teoria multimilor",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [7],
+            "weight": 0.25
+        },
+        {
+             "level_name": "REVENIM LA DIAGRAME KARNAUGH",
+             "num_vars": 6,
+             "cells": [1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+             "dont_care": [5, 10],
+             "weight": 0.5
+        }
+    ]
+}

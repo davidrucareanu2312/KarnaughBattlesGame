@@ -1,0 +1,127 @@
+{
+    "campaign_name": "O lupta de craciun",
+    "boss_behavior": "standard",
+    "boss_sprite" : "assets/sprites/boss_sprites/fuego.png",
+    "minimal_round_score" : 0.9,
+    "minimal_score" : 0.75, 
+    "total_time": 30,
+    "levels": [
+        {
+            "level_name": "Concert Fuego 2010",
+            "num_vars": 2,
+            "cells": [1, 0, 0, 1],
+            "hints": ["Încălzește vocea..."]
+        },
+        {
+            "level_name": "Concert Fuego 2011",
+            "num_vars": 2,
+            "cells": [0, 1, 1, 0],
+            "hints": ["Impodobește bradul..."]
+        },
+        {
+            "level_name": "Concert Fuego 2012",
+            "num_vars": 2,
+            "cells": [1, 1, 0, 1],
+            "hints": ["Mama împodobește bradul..."]
+        },
+        {
+            "level_name": "Concert Fuego 2013",
+            "num_vars": 2,
+            "cells": [0, 0, 1, 1],
+            "hints": ["Nu uita de globulețe..."],
+            "dont_care": [0]
+        },
+        {
+            "level_name": "Concert Fuego 2014",
+            "num_vars": 2,
+            "cells": [1, 0, 1, 0],
+            "hints": ["Colindăm, colindăm..."]
+        },
+        {
+            "level_name": "Concert Fuego 2015",
+            "num_vars": 3,
+            "cells": [1, 0, 1, 1, 0, 1, 0, 0],
+            "hints": ["Un an mai complex..."],
+            "dont_care": [4]
+        },
+        {
+            "level_name": "Concert Fuego 2016",
+            "num_vars": 2,
+            "cells": [0, 1, 0, 1],
+            "hints": ["Lumina lină..."]
+        },
+        {
+            "level_name": "Concert Fuego 2017",
+            "num_vars": 2,
+            "cells": [1, 1, 1, 0],
+            "hints": ["Se aud zurgălăii..."]
+        },
+        {
+            "level_name": "Concert Fuego 2018",
+            "num_vars": 2,
+            "cells": [0, 0, 0, 1],
+            "hints": ["Doar o notă înaltă..."]
+        },
+        {
+            "level_name": "Concert Fuego 2019",
+            "num_vars": 2,
+            "cells": [1, 0, 0, 0],
+            "hints": ["Emoție de Crăciun..."]
+        },
+        {
+            "level_name": "Concert Fuego 2020",
+            "num_vars": 2,
+            "cells": [1, 1, 0, 0],
+            "hints": ["Un an dificil..."],
+            "dont_care": [2]
+        },
+        {
+            "level_name": "Concert Fuego 2021",
+            "num_vars": 2,
+            "cells": [0, 1, 1, 1],
+            "hints": ["Revenim pe scenă..."]
+        },
+        {
+            "level_name": "Concert Fuego 2022",
+            "num_vars": 2,
+            "cells": [1, 0, 1, 1],
+            "hints": ["Aplauze la scenă deschisă..."]
+        },
+        {
+            "level_name": "Concert Fuego 2023",
+            "num_vars": 2,
+            "cells": [0, 0, 1, 0],
+            "hints": ["Să ningă peste noi..."]
+        },
+        {
+            "level_name": "Concert Fuego 2024",
+            "num_vars": 2,
+            "cells": [1, 1, 1, 1],
+            "hints": ["Totul e luminat..."]
+        },
+        {
+            "level_name": "Concert Fuego 2025",
+            "num_vars": 2,
+            "cells": [0, 1, 0, 0],
+            "hints": ["Viitorul sună bine..."]
+        },
+        {
+            "level_name": "Concert Fuego 2026",
+            "num_vars": 2,
+            "cells": [1, 0, 0, 1],
+            "hints": ["Încă un bis..."]
+        },
+        {
+            "level_name": "Concert Fuego 2027",
+            "num_vars": 2,
+            "cells": [0, 1, 1, 0],
+            "hints": ["Aproape de final..."]
+        },
+        {
+            "level_name": "Concert fuego de anul nou",
+            "num_vars": 5,
+            "cells": [1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+            "dont_care": [5, 10]
+        }
+    ]
+}

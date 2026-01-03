@@ -1,0 +1,61 @@
+{
+    "campaign_name": "Aproape sa orbesc de la un condensator",
+    "boss_behavior": "disfunctional", 
+    "boss_sprite" : "assets/sprites/boss_sprites/sprite_boss3.png",
+    "minimal_round_score" : 0.5,
+    "minimal_score" : 0.5,
+    "boss_lines" : {
+        "start_lines": ["este usor sa te arzi cu piesele electronice","Hai sa iti arat ce se intampla cu condensatoarele", "Cand le conectezi la o polaritate gresita"],
+        "battle_lines": [
+            {
+                "message" : "Cineva o data si-a pierdut un degetel asa",
+                "after" : 2
+            },
+            {
+                "message" : "BOOM BOOM",
+                "after" : 4
+            }
+        ],
+        "end_lines": ["TE-AS FI PUTUT INVATA CUM SA FACI UN CPU", "pur electronic...."]
+    },
+    "total_time": 60,
+    "levels": [
+        {
+            "level_name": "De la rezistente si tranzistoare, la porti logice",
+            "num_vars": 2,
+            "cells": [1, 0, 1, 1],
+            "hints": ["Începe ușor..."],
+            "weight": 0.1
+        },
+        {
+            "level_name": "De la rezistente si tranzistoare, la porti logice",
+            "num_vars": 5,
+            "cells": [0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0],
+            "dont_care": [3, 11, 15, 20],
+            "weight": 0.2
+        },
+        {
+            "level_name": "De la rezistente si tranzistoare, la porti logice",
+            "num_vars": 3,
+            "cells": [1, 0, 1, 1, 0, 0, 0, 1],
+            "hints": ["Începe ușor..."],
+            "dont_care": [1, 3, 4],
+            "weight": 0.2
+        },
+        {
+            "level_name": "De la rezistente si tranzistoare, la porti logice",
+            "num_vars": 3,
+            "cells": [0, 0, 0, 1, 1, 0, 1, 1],
+            "hints": ["Începe ușor..."],
+            "dont_care": [2, 7],
+            "weight": 0.2
+        },
+        {
+             "level_name": "De la rezistente si tranzistoare, la porti logice",
+             "num_vars": 5,
+             "cells": [1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+             "dont_care": [0, 7, 16, 28],
+             "weight": 0.3
+        }
+    ]
+}

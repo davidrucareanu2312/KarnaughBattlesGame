@@ -26,7 +26,7 @@ class MapLoader:
                 'text': "Ripoff PRECIS. (Pare periculos...)",
                 'type': 'boss_trigger',
                 'boss_id': 1,
-                'boss_img': 'boss_sprites/trei.png',
+                'boss_img': 'boss_sprites/K_boss_1.json',
                 'boss_line': "Sa te vad la examen.",
                 'battle_config': 'configs/Karnaugh/K_boss_1.json'
             },
@@ -36,9 +36,9 @@ class MapLoader:
                 'text': "Un student de anul 4 care nu a dormit.",
                 'type': 'boss_trigger',
                 'boss_id': 2,
-                'boss_img': 'boss.png', 
+                'boss_img': 'boss_sprites/K_boss_2.json', 
                 'boss_line': "Ai tema la OS rezolvata??",
-                'battle_config': 'configs/Karnaugh/K_boss_1.json'
+                'battle_config': 'configs/Karnaugh/K_boss_2.json'
             },
 
             {
@@ -46,9 +46,9 @@ class MapLoader:
                 'text': "Gardianul Restantelor.",
                 'type': 'boss_trigger',
                 'boss_id': 3,
-                'boss_img': 'boss.png',
+                'boss_img': 'boss_sprites/K_boss_3.json',
                 'boss_line': "Carnetul la control!",
-                'battle_config': 'configs/Karnaugh/K_boss_1.json'
+                'battle_config': 'configs/Karnaugh/K_boss_3.json'
             },
 
             {
@@ -56,9 +56,9 @@ class MapLoader:
                 'text': "Maestrul Portilor Logice.",
                 'type': 'boss_trigger',
                 'boss_id': 4,
-                'boss_img': 'boss_sprites/khiru.png',
+                'boss_img': 'boss_sprites/K_boss_4.json',
                 'boss_line': "01001110!",
-                'battle_config': 'configs/Karnaugh/K_boss_1.json'
+                'battle_config': 'configs/Karnaugh/K_boss_4.json'
             },
             {
                 'rect': pygame.Rect(432, 928, 50, 80),
@@ -70,7 +70,7 @@ class MapLoader:
                 'boss_music': 'impodobeste.mp3', 
                 
                 'boss_line': "Impodobeste mama bradul...",
-                'battle_config': 'configs/Karnaugh/K_boss_1.json' 
+                'battle_config': 'configs/Karnaugh/K_boss_5.json' 
             },
 
             { 'rect': pygame.Rect(724, 652, 50, 80), 'text': "Fantana... David a aprobat apa." },

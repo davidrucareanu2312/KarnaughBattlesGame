@@ -1,0 +1,56 @@
+{
+    "campaign_name": "De ce toate automatele finite au atatea stari de hazard?",
+    "boss_behavior": "hazard", 
+    "boss_sprite" : "assets/sprites/boss_sprites/sprite_boss2.png",
+    "minimal_round_score" : 0.7,
+    "minimal_score" : 0.5,
+    "boss_lines" : {
+        "start_lines": ["AI GRIJA LA STARILE INTERZISE","AUTOMATELE FINITE, ma sperie"],
+        "battle_lines": [
+            {
+                "message" : "ai inceput anul 1 acum o luna si deja mirosi interesant?",
+                "after" : 1
+            },
+            {
+                "message" : "mare grija sa ai",
+                "after" : 1
+            },
+            {
+                "message" : "mare chestie, trnzitia mealy moore",
+                "after" : 3
+            }
+        ],
+        "end_lines": []
+    },
+    "total_time": 60,
+    "levels": [
+        {
+            "level_name": "Mealy",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [7],
+            "weight": 0.15
+        },
+        {
+             "level_name": "Moore",
+             "num_vars": 4,
+             "cells": [1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+             "dont_care": [5, 10],
+             "weight": 0.2
+        },
+        {
+            "level_name": "Mealy",
+            "num_vars": 4,
+            "cells": [1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1],
+            "dont_care": [1, 5, 10, 11],
+            "weight": 0.2
+        },
+        {
+            "level_name": "Moore",
+            "num_vars": 5,
+            "cells": [1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+            "dont_care": [2, 8, 13, 26],
+            "weight": 0.45
+        }
+    ]
+}

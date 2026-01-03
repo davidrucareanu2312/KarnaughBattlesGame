@@ -1,0 +1,38 @@
+{
+    "campaign_name": "Lupta cu cel ce orbeste",
+    "boss_behavior": "tutorial", 
+    "boss_sprite" : "assets/sprites/boss_sprites/tutorial_boss.jpeg",
+    "minimal_round_score" : 0.5,
+    "minimal_score" : 0.5,
+    "boss_lines" : {
+        "start_lines": ["Acesta este primul curs de proiectare Logica","Ne place sa minimizam diagrama Karnaugh"],
+        "battle_lines": [
+            {
+                "message" : "Fantastic",
+                "after" : 1
+            },
+            {
+                "message" : "Din nou fantastic",
+                "after" : 2
+            }
+        ],
+        "end_lines": ["Esti pregatit sa te lupti in lumea larga in confruntari de minimizare de Karnaugh"]
+    },
+    "total_time": 9999,
+    "levels": [
+        {
+            "level_name": "Tutorial 1",
+            "num_vars": 2,
+            "cells": [1, 0, 1, 1],
+            "hints": ["Începe ușor..."],
+            "weight": 0
+        },
+        {
+            "level_name": "Tutorial 2",
+            "num_vars": 3,
+            "cells": [1, 1, 0, 0, 1, 1, 0, 1],
+            "dont_care": [4],
+            "weight": 0
+        }
+    ]
+}
