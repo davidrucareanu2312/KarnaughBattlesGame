@@ -1,7 +1,7 @@
 {
-    "campaign_name": "De ce toate automatele finite au atatea stari de hazard?",
+    "campaign_name": "Mereu intri in ... stari de hazard",
     "boss_behavior": "hazard", 
-    "boss_sprite" : "assets/sprites/boss_sprites/sprite_boss2.png",
+    "boss_sprite" : "assets/sprites/boss_sprites/sprite_boss2.jpeg",
     "minimal_round_score" : 0.7,
     "minimal_score" : 0.5,
     "boss_lines" : {

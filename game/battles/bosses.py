@@ -31,7 +31,6 @@ class HazardStateBoss(BossStrategy):
             if self.timer >= self.interval:
                 self.timer = 0
                 if self.battle.selected_cells:
-                    print("SABOTEUR: Ți-am șters selecția!")
                     self.battle.selected_cells.clear()
 
 class DisfunctionalBoss(BossStrategy):

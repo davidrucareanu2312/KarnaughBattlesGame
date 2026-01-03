@@ -1,7 +1,7 @@
 {
     "campaign_name": "Aproape sa orbesc de la un condensator",
     "boss_behavior": "disfunctional", 
-    "boss_sprite" : "assets/sprites/boss_sprites/sprite_boss3.png",
+    "boss_sprite" : "assets/sprites/boss_sprites/sprite_boss3.jpeg",
     "minimal_round_score" : 0.5,
     "minimal_score" : 0.5,
     "boss_lines" : {

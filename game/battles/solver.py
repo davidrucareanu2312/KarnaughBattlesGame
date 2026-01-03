@@ -116,7 +116,7 @@ def solve_karnaugh(cells, dont_care_indices, num_vars):
 
     if not final_pis: return "0"
     
-    full_var_names = ['A', 'B', 'C', 'D']
+    full_var_names = ['A', 'B', 'C', 'D', 'E', 'F']
     var_names = full_var_names[:num_vars]
     
     text_terms = []

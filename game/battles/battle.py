@@ -244,7 +244,7 @@ class Battle:
                 return
 
             if self.dialog_box.active:
-                if event.key in [pygame.K_SPACE, pygame.K_RETURN, pygame.K_n]:
+                if event.key in [pygame.K_SPACE, pygame.K_RETURN, pygame.K_n, pygame.K_e]:
                     if not self.dialog_box.done_typing:
                         self.dialog_box.skip_animation()
                     else:
@@ -252,7 +252,7 @@ class Battle:
                 return
 
             if self.show_summary:
-                if event.key == pygame.K_n or event.key == pygame.K_RETURN:
+                if event.key == pygame.K_n or event.key == pygame.K_RETURN or event.key == pygame.K_e:
                     if not self.session.is_alive:
                         self.is_victory = False
                         self.defeat_text = "ai ramas fara HP, esti obosit"
@@ -280,7 +280,7 @@ class Battle:
                 return
 
             if self.show_options:
-                if event.key == pygame.K_s:
+                if event.key == pygame.K_s or event.key == pygame.K_e:
                     user_terms = [term_from_group(g, self.num_vars, self.rows, self.cols) for g in self.selected_groups]
                     self.user_solution = " + ".join(user_terms) if user_terms else "0"
                     self.optimal_solution = solve_karnaugh(self.cells, self.dont_care, self.num_vars)
@@ -311,7 +311,7 @@ class Battle:
                     self.show_options = False
                 return
 
-            if event.key == pygame.K_RETURN:
+            if event.key == pygame.K_RETURN or event.key == pygame.K_e:
                 if self.selected_cells:
                     group = set(self.selected_cells)
                     if is_valid_group(group, self.cells, self.dont_care, self.rows, self.cols):

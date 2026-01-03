@@ -1,7 +1,7 @@
 {
-    "campaign_name": "Lupta cu K....hiru, cel ce a acaparat diagramele karnaugh",
+    "campaign_name": "Lupta cu K....hiru, insusi Karnaugh",
     "boss_behavior": "final", 
-    "boss_sprite" : "assets/sprites/boss_sprites/sprite_boss4.png",
+    "boss_sprite" : "assets/sprites/boss_sprites/sprite_boss4.jpeg",
     "minimal_round_score" : 0.75,
     "minimal_score" : 0.75,
     "boss_lines" : {

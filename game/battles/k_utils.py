@@ -56,6 +56,10 @@ def term_from_group(group, num_vars, rows, cols):
         var_names = ['A', 'B', 'C']
     elif num_vars == 4:
         var_names = ['A', 'B', 'C', 'D']
+    elif num_vars == 5:
+        var_names = ['A', 'B', 'C', 'D', 'E']
+    elif num_vars == 6:
+        var_names = ['A', 'B', 'C', 'D', 'E', 'F']
 
     binary_vals = [format(idx, f'0{num_vars}b') for idx in group]
 
