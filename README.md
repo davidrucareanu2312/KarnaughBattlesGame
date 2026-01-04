@@ -1,4 +1,5 @@
 Karnaugh Warriors - README
+Autori: Nasta Alexandra, Rucareanu David Mihai
 1. Descriere
 
 Karnaugh Warriors este incercarea noastra de a face materia de Proiectare 
