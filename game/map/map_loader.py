@@ -26,7 +26,7 @@ class MapLoader:
                 'text': "Ripoff PRECIS. (Pare periculos...)",
                 'type': 'boss_trigger',
                 'boss_id': 1,
-                'boss_img': 'boss_sprites/trei.png',
+                'boss_img': 'boss_sprites/sprite_boss1.jpeg',
                 'boss_line': "I may be former president, but I am CURRENT logical projec...tor??",
                 'battle_config': 'configs/Karnaugh/K_boss_1.json'
             },
@@ -36,7 +36,7 @@ class MapLoader:
                 'text': "EC Ripoff. Te simti amenintat.",
                 'type': 'boss_trigger',
                 'boss_id': 2,
-                'boss_img': 'boss.png', 
+                'boss_img': 'boss_sprites/sprite_boss2.jpeg', 
                 'boss_line': "Cogito ergo sum... TE PROIECTEZ LOGIC.",
                 'battle_config': 'configs/Karnaugh/K_boss_2.json'
             },
@@ -46,7 +46,7 @@ class MapLoader:
                 'text': "ED Ripoff. Te simti slabit...",
                 'type': 'boss_trigger',
                 'boss_id': 3,
-                'boss_img': 'boss.png',
+                'boss_img': 'boss_sprites/sprite_boss3.jpeg',
                 'boss_line': "OOO MY GODDDDD!!!",
                 'battle_config': 'configs/Karnaugh/K_boss_3.json'
             },
